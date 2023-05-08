@@ -4,3 +4,8 @@ function sum(a, b) {
 }
 ;
 console.log(sum(4, 8));
+//Anonimo Funtions
+setTimeout(function () {
+    var salary = 1000;
+    console.log(salary);
+}, 2000);

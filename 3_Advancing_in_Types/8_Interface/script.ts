@@ -1,9 +1,17 @@
-interface Point {
+interface Point  {
     x: number
     y: number
     z: number
+};
+
+function showCoord(obj: Point) {
+    console.log(`x: ${obj.x}, ${obj.y} and ${obj.z}`)
+};
+
+const coordObj:Point = {
+    x: 10,
+    y: 20,
+    z: 30
 }
 
-function coordenates(obj: Point) {
-    console.log(`My points are ${obj.x}, ${obj.y},${obj.z}`)
-}
+showCoord(coordObj);

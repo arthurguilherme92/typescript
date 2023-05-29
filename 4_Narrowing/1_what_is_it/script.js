@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /* Typeof Type Guard*/
 console.log("---Type Guard---");
 function sum(a, b) {
@@ -36,3 +51,36 @@ function operations(arr, operation) {
 operations([1, 4, 8]);
 operations([1, 4, 8], "sum");
 operations([1, 4, 8], "multiply");
+// instanceOf
+var User = /** @class */ (function () {
+    function User(name) {
+        this.name = name;
+    }
+    ;
+    return User;
+}());
+;
+var SuperUser = /** @class */ (function (_super) {
+    __extends(SuperUser, _super);
+    function SuperUser(name) {
+        return _super.call(this, name) || this;
+    }
+    ;
+    return SuperUser;
+}(User));
+;
+var Arthur = new User("Arthur");
+var Guilherme = new SuperUser("Guilherme");
+console.log(Arthur);
+console.log(Guilherme);
+function getUser(user) {
+    if (user instanceof SuperUser) {
+        console.log("Hello ".concat(user.name, ", how are oyou doing today?"));
+    }
+    else if (user instanceof User) {
+        console.log("Hello ".concat(user.name, "!"));
+    }
+    ;
+}
+getUser(Arthur);
+getUser(Guilherme);

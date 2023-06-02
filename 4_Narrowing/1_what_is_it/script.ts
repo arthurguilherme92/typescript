@@ -66,3 +66,33 @@ function getUser(user: object) {
 
 getUser(Arthur);
 getUser(Guilherme);
+
+//iN Operator
+class Dog {
+    name
+    breed
+
+    constructor(name: string, breed?: string) {
+        this.name = name;
+        if(breed) {
+            this.breed = breed;
+        }
+    }
+};
+
+const Turca = new Dog("Turco");
+const Rex = new Dog("Rex", "Germany");
+
+
+console.log(Turca, Rex)
+
+function dogDetails(dog :Dog) {
+    if('breed' in dog) {
+        console.log(`The dog is ${dog.breed}`);
+    } else {
+        console.log(`The dog is without breed!`);
+    }
+};
+
+dogDetails(Turca);
+dogDetails(Rex);

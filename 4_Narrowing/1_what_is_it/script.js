@@ -84,3 +84,28 @@ function getUser(user) {
 }
 getUser(Arthur);
 getUser(Guilherme);
+//iN Operator
+var Dog = /** @class */ (function () {
+    function Dog(name, breed) {
+        this.name = name;
+        if (breed) {
+            this.breed = breed;
+        }
+    }
+    return Dog;
+}());
+;
+var Turca = new Dog("Turco");
+var Rex = new Dog("Rex", "Germany");
+console.log(Turca, Rex);
+function dogDetails(dog) {
+    if ('breed' in dog) {
+        console.log("The dog is ".concat(dog.breed));
+    }
+    else {
+        console.log("The dog is without breed!");
+    }
+}
+;
+dogDetails(Turca);
+dogDetails(Rex);
